@@ -28,3 +28,15 @@ class Order(db.Model):
     spot_hedged_order = Column(Numeric)
     signal_reason = Column(String)
     timestamp = Column(DateTime, default=datetime.utcnow)
+
+class FundingRate(db.Model):
+    __tablename__ = 'funding_rates'
+    id = Column(Integer, primary_key=True)
+    symbol = Column(String)
+    mark_price = Column(Float)
+    index_price = Column(Float)
+    interest_rate = Column(Float)
+    estimated_settle_price = Column(Float)
+    funding_rate = Column(Float)
+    funding_timestamp = Column(Integer)
+    timestamp = Column(Integer)
